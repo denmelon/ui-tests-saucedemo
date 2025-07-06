@@ -1,0 +1,25 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints
+
+# ChromeDriver executable
+chromedriver.exe
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Python log files
+*.log
