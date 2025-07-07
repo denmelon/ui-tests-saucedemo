@@ -1,58 +1,58 @@
-# 🧪 UI Test Automation: Login Test for saucedemo.com
+# 🧪 UI Test Automation: Saucedemo.com
 
-This is a simple UI automation project using **Python** and **Selenium WebDriver** to test the login functionality of [saucedemo.com](https://www.saucedemo.com), a demo e-commerce website provided by Sauce Labs.
+This project is a beginner-friendly demo of UI test automation using Python and Selenium.  
+It uses `pytest` for running tests and `pytest-html` for generating reports.
 
-## ✅ What is tested
-- Opening the site in Chrome browser
-- Entering valid credentials (`standard_user` / `secret_sauce`)
-- Clicking the login button
-- Verifying successful login by checking the URL
+## 🔧 Tech Stack
 
-## 🛠 Technologies Used
 - Python 3.x
 - Selenium WebDriver
-- Jupyter Notebook (via Anaconda)
-- Google Chrome + chromedriver
+- Pytest
+- Pytest-HTML
+- ChromeDriver
 
-## 🔧 Setup Instructions
+## 📁 Project Structure
 
-### 1. Install Selenium
-In your Jupyter notebook or terminal:
+ui-tests-saucedemo/ 
+
+TBU
+
+
+## 🧪 Test: Add to Cart
+
+This test does the following:
+
+1. Opens [saucedemo.com](https://www.saucedemo.com)
+2. Logs in as `standard_user`
+3. Adds the first product to the cart
+4. Navigates to the cart
+5. Verifies that the item appears
+
+### ✅ Assertion:
+
+Check that product name is not empty in the cart.
+
+### 📸 Screenshot:
+
+![Cart Screenshot](screenshots/cart_page.png)
+
+## 📊 HTML Report
+
+To generate test report:
 
 ```bash
-pip install selenium
+pytest tests/ --html=reports/report.html
+```
 
-### 2. Download ChromeDriver
-Get the correct version for your Chrome browser:
-https://chromedriver.chromium.org/downloads
+The report is saved in the reports/ folder.
 
-Place chromedriver.exe in your project folder or add it to system PATH.
+🚀 How to Run
+1. Install dependencies:
+```
+pip install -r requirements.txt
+```
 
-### 3. Run the Notebook
-Open 01_login_test.ipynb in Jupyter
-
-Execute each cell to run the test
-
-📂 Project Structure
-
-ui-tests-saucedemo/
-├── 01_login_test.ipynb      # Jupyter notebook with Selenium test
-├── requirements.txt         # Dependencies
-├── chromedriver.exe         # Chrome driver (optional if in PATH)
-└── README.md                # Project description
-
-🧪 Sample Code (Jupyter)
-
-# driver.get("https://www.saucedemo.com/")
-# driver.find_element(By.ID, "user-name").send_keys("standard_user")
-# driver.find_element(By.ID, "password").send_keys("secret_sauce")
-# driver.find_element(By.ID, "login-button").click()
-# assert "inventory" in driver.current_url
-
-💡 Notes
-This is a learning project as part of a QA automation portfolio
-
-The site is intended for testing and demo purposes only
-
-🛠 Created as part of a personal QA portfolio.
-📬 Feel free to open issues or suggestions!
+2. Run test:
+```aiignore
+pytest
+```
