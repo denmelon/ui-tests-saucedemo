@@ -1,7 +1,8 @@
-# 🧪 UI Test Automation: Saucedemo.com
+# 🧪 SauceDemo UI Test Automation
 
-This project is a beginner-friendly demo of UI test automation using Python and Selenium.  
-It uses `pytest` for running tests and `pytest-html` for generating reports.
+UI tests for [SauceDemo](https://www.saucedemo.com) using Python, Selenium and pytest.
+Features include parametrized login, filtering/sorting tests, screenshot capture on failures, and HTML reports.
+
 
 ## 🔧 Tech Stack
 
@@ -14,8 +15,20 @@ It uses `pytest` for running tests and `pytest-html` for generating reports.
 ## 📁 Project Structure
 
 ui-tests-saucedemo/ 
-
-TBU
+ui-tests-saucedemo/
+├── data/
+│ └── login_data.json # Data for parametrized login tests
+├── tests/
+│ ├── conftest.py # Driver fixture and hooks
+│ ├── test_login.py # Parametrized login tests
+│ ├── test_add_to_cart.py # Test adding a product to cart
+│ └── test_sorting.py # Test sorting functionality
+├── screenshots/ # Auto screenshots upon failures
+├── reports/
+│ └── report.html # pytest-html report
+├── .gitignore
+├── requirements.txt
+└── README.md
 
 
 ## 🧪 Test: Add to Cart
@@ -46,13 +59,66 @@ pytest tests/ --html=reports/report.html
 
 The report is saved in the reports/ folder.
 
-🚀 How to Run
-1. Install dependencies:
-```
+## 🚀 Setup
+
+```bash
+python -m venv .venv
+source .venv/Scripts/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-2. Run test:
-```aiignore
-pytest
+---
+
+### 4. How to run tests
+
+
+## 🧪 Running Tests
+
+Generate HTML report with embedded screenshots:
+
+```bash
+pytest tests/ --html=reports/report.html --self-contained-html
 ```
+
+---
+
+### 5. Tests and data info
+
+
+## 🔍 Tests Overview
+
+- `test_login.py` – Parametrized login tests using data from `data/login_data.json`, includes valid and invalid credentials.
+- `test_add_to_cart.py` – Adds first product to cart and verifies it appears.
+- `test_sorting.py` – Checks that "Price (low to high)" sorting works correctly.
+```
+## 📂 Login Data Structure
+
+File: `data/login_data.json`
+
+```json
+[
+  { "username": "standard_user", "password": "secret_sauce" },
+  { "username": "locked_out_user", "password": "secret_sauce" },
+  { "username": "problem_user", "password": "secret_sauce" }
+]
+```
+Edit this to add new test credentials.
+
+
+---
+
+
+## 📸 Screenshots on Failure
+
+If a test fails, a screenshot will be stored in `screenshots/`. These are automatically embedded in the HTML report.
+
+## 🖼 Example Report
+
+![Example report screenshot](screenshots/test_login.png)
+
+
+### Requirements 
+selenium
+pytest
+pytest-html
+
