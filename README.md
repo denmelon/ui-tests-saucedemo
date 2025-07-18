@@ -14,7 +14,6 @@ Features include parametrized login, filtering/sorting tests, screenshot capture
 
 ## 📁 Project Structure
 
-ui-tests-saucedemo/ 
 ui-tests-saucedemo/
 ├── data/
 │ └── login_data.json # Data for parametrized login tests
